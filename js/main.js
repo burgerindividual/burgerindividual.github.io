@@ -29,3 +29,9 @@ async function fillText(textElements, textContents, count) {
     }
   }
 }
+
+let fontSize = parseFloat(window.getComputedStyle(document.getElementById("terminal-text")).fontSize);
+
+document.addEventListener("scroll", function(){
+  document.getElementById("scroll-pane").style.top = (window.scrollY % fontSize) + "px";
+});
