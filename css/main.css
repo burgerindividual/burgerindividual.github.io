@@ -99,10 +99,6 @@ pre {
 	position: absolute;
 }
 
-a:active {
-  color: blue;
-}
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
