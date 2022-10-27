@@ -121,6 +121,36 @@ pre {
   text-shadow: none;
 }
 
+body {
+  /* make the body fit our viewport */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+#canvas {
+  /* make the canvas wrapper fit the document */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.plane {
+  /* define the size of your plane */
+  width: 100%;
+  height: 100vh;
+  /* margin: 10vh auto; */
+  margin: 0%;
+}
+
+.scroll-pane {
+  display: none;
+}
+
 /*
  * A better looking default horizontal rule
  */

@@ -1,3 +1,6 @@
+import {Curtains, Plane} from "curtainsjs";
+
+//// text "loading" effect
 const FILL_DELAY = 5;
 
 var walker = document.createTreeWalker(document.documentElement,NodeFilter.SHOW_TEXT,null);
@@ -30,8 +33,13 @@ async function fillText(textElements, textContents, count) {
   }
 }
 
-let fontSize = parseFloat(window.getComputedStyle(document.getElementById("terminal-text")).fontSize);
+//// scroll choppifier
 
-document.addEventListener("scroll", function(){
-  document.getElementById("scroll-pane").style.top = (window.scrollY % fontSize) + "px";
-});
+// let fontSize = parseFloat(window.getComputedStyle(document.getElementById("terminal-text")).fontSize);
+
+// document.addEventListener("scroll", function(){
+//   document.getElementById("scroll-pane").style.top = (window.scrollY % fontSize) + "px";
+// });
+
+//// crt effect
+import {Curtains, Plane} from "curtainsjs";
