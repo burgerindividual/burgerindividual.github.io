@@ -1,4 +1,4 @@
-import {Curtains, Plane} from "curtainsjs";
+import {Curtains, Plane, Vec2} from "curtainsjs";
 
 //// text "loading" effect
 const FILL_DELAY = 5;
@@ -42,4 +42,69 @@ async function fillText(textElements, textContents, count) {
 // });
 
 //// crt effect
-import {Curtains, Plane} from "curtainsjs";
+const RESOLUTION_MULTIPLIER = 1/3;
+const SCREEN_CURVATURE_X = 4.0;
+const SCREEN_CURVATURE_Y = 4.0;
+const SCAN_LINE_OPACITY_X = 0.25;
+const SCAN_LINE_OPACITY_Y = 0.25;
+const VIGNETTE_OPACITY = 1;
+const BRIGHTNESS = 1.5;
+const VIGNETTE_ROUNDNESS = 1;
+
+window.addEventListener("load", () => {
+  // set up our WebGL context and append the canvas to our wrapper
+  const curtains = new Curtains({
+    container: "canvas",
+    pixelRatio: Math.min(1.5, window.devicePixelRatio) // limit pixel ratio for performance
+  });
+
+  // get our plane element
+  const planeElement = document.getElementsById("pre-shader-plane");
+
+  // set our initial parameters (basic uniforms)
+  const params = {
+    vertexShaderID: "plane-vs", // our vertex shader ID
+    fragmentShaderID: "plane-fs", // our framgent shader ID
+    widthSegments: 1,
+    heightSegments: 1,
+    uniforms: {
+      curvature: {
+        name: "curvature",
+        type: "2f",
+        value: [SCREEN_CURVATURE_X, SCREEN_CURVATURE_Y]
+      },
+      screenResolution: {
+        name: "screenResolution",
+        type: "2f",
+        value: [planeElement.clientWidth, planeElement.clientHeight]
+      },
+      scanLineOpacity: {
+        name: "scanLineOpacity",
+        type: "2f",
+        value: [SCAN_LINE_OPACITY_X, SCAN_LINE_OPACITY_Y]
+      },
+      vignetteOpacity: {
+        name: "vignetteOpacity",
+        type: "1f",
+        value: VIGNETTE_OPACITY
+      },
+      brightness: {
+        name: "brightness",
+        type: "1f",
+        value: BRIGHTNESS
+      },
+      vignetteRoundness: {
+        name: "vignetteRoundness",
+        type: "1f",
+        value: VIGNETTE_ROUNDNESS
+      }
+    }
+  };
+
+  const plane = new Plane(curtains, planeElement, params);
+  
+  plane.onAfterResize(() => {
+    const planeBoundingRect = simplePlane.getBoundingRect();
+    simplePlane.uniforms.screenResolution.value = [planeBoundingRect.width, planeBoundingRect.height];
+  });
+});
