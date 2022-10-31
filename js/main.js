@@ -1,4 +1,4 @@
-import {Curtains, Plane, Vec2} from "curtainsjs";
+import {Curtains, Plane} from 'curtainsjs';
 
 //// text "loading" effect
 const FILL_DELAY = 5;
@@ -59,12 +59,16 @@ window.addEventListener("load", () => {
   });
 
   // get our plane element
-  const planeElement = document.getElementsById("pre-shader-plane");
+  const planeElement = document.getElementById("pre-shader-plane");
+
+  var fs = require("fs");
+  var vertShader = fs.readFileSync("shaders/plane.vs", 'utf8');
+  var fragShader = fs.readFileSync("shaders/crt.fs", 'utf8');
 
   // set our initial parameters (basic uniforms)
   const params = {
-    vertexShaderID: "plane-vs", // our vertex shader ID
-    fragmentShaderID: "plane-fs", // our framgent shader ID
+    vertexShader: vertShader,
+    fragmentShader: fragShader,
     widthSegments: 1,
     heightSegments: 1,
     uniforms: {
@@ -76,7 +80,7 @@ window.addEventListener("load", () => {
       screenResolution: {
         name: "screenResolution",
         type: "2f",
-        value: [planeElement.clientWidth, planeElement.clientHeight]
+        value: [planeElement.clientWidth * RESOLUTION_MULTIPLIER, planeElement.clientHeight * RESOLUTION_MULTIPLIER]
       },
       scanLineOpacity: {
         name: "scanLineOpacity",
@@ -102,9 +106,9 @@ window.addEventListener("load", () => {
   };
 
   const plane = new Plane(curtains, planeElement, params);
-  
+
   plane.onAfterResize(() => {
     const planeBoundingRect = simplePlane.getBoundingRect();
-    simplePlane.uniforms.screenResolution.value = [planeBoundingRect.width, planeBoundingRect.height];
+    simplePlane.uniforms.screenResolution.value = [planeBoundingRect.width * RESOLUTION_MULTIPLIER, planeBoundingRect.height * RESOLUTION_MULTIPLIER];
   });
 });
