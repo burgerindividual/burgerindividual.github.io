@@ -1225,4 +1225,4 @@ FileETag None
 
 # Custom stuff starts here
 RewriteEngine on
-RewriteRule /portfolio/.* / [R,L]
+RewriteRule ^portfolio/.*$ / [L,NC,R=302,NE]
