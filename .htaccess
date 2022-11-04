@@ -1224,4 +1224,5 @@ FileETag None
 # </IfModule>
 
 # Custom stuff starts here
-RedirectMatch 301 /portfolio/.* /
+RewriteEngine on
+RewriteRule /portfolio/.* / [R,L]
