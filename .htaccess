@@ -316,6 +316,8 @@ AddDefaultCharset utf-8
     # (5)
     # RewriteOptions <options>
 
+    AllowOverride All
+
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -1224,7 +1226,4 @@ FileETag None
 # </IfModule>
 
 # Custom stuff starts here
-RewriteEngine On
-Options +FollowSymlinks
-RewriteBase /
 RewriteRule ^portfolio/(.*)$ /$1 [L,NC,R=301,NE]
