@@ -320,6 +320,12 @@ AddDefaultCharset utf-8
 
 </IfModule>
 
+# Custom stuff
+<IfModule mod_rewrite.c>
+      RewriteRule ^portfolio/(.*)$ /$1 [L,NC,R=301,NE]
+</IfModule>
+
+
 # ----------------------------------------------------------------------
 # | Forcing `https://`                                                 |
 # ----------------------------------------------------------------------
@@ -1224,8 +1230,3 @@ FileETag None
 #     RewriteCond %{REQUEST_FILENAME} !-f
 #     RewriteRule ^(.+)\.(\w+)\.(bmp|css|cur|gif|ico|jpe?g|m?js|a?png|svgz?|webp|webmanifest)$ $1.$3 [L]
 # </IfModule>
-
-# Custom stuff starts here
-<IfModule mod_rewrite.c>
-      RewriteRule ^portfolio/(.*)$ /$1 [L,NC,R=301,NE]
-</IfModule>
