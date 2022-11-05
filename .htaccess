@@ -311,7 +311,7 @@ AddDefaultCharset utf-8
     # Options +SymLinksIfOwnerMatch
 
     # (4)
-    # RewriteBase /
+    RewriteBase /
 
     # (5)
     # RewriteOptions <options>
@@ -1225,4 +1225,4 @@ FileETag None
 
 # Custom stuff starts here
 RewriteEngine on
-RewriteRule ^portfolio/.*$ / [L,NC,R=302,NE]
+RewriteRule ^portfolio//(.*)$ /$1 [L,NC,R=301,NE]
