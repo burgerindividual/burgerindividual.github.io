@@ -1226,4 +1226,6 @@ FileETag None
 # </IfModule>
 
 # Custom stuff starts here
-RewriteRule ^portfolio/(.*)$ /$1 [L,NC,R=301,NE]
+<IfModule mod_rewrite.c>
+      RewriteRule ^portfolio/(.*)$ /$1 [L,NC,R=301,NE]
+</IfModule>
