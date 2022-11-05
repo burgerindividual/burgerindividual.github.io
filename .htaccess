@@ -325,8 +325,9 @@ AddDefaultCharset utf-8
 <IfModule mod_rewrite.c>
 
       RewriteEngine On
-
-      RewriteRule ^.*portfolio(.*)$ /$1 [L,NC,R=301,NE]
+      Options +FollowSymlinks
+      RewriteBase /
+      RewriteRule ^.*$ / [L,NC,R=301,NE]
 
 </IfModule>
 
