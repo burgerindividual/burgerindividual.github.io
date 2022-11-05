@@ -1224,5 +1224,7 @@ FileETag None
 # </IfModule>
 
 # Custom stuff starts here
-RewriteEngine on
-RewriteRule ^portfolio//(.*)$ /$1 [L,NC,R=301,NE]
+RewriteEngine On
+Options +FollowSymlinks
+RewriteBase /
+RewriteRule ^portfolio/(.*)$ /$1 [L,NC,R=301,NE]
