@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Ryan Gehling -- Sole Developer -- @burgerdude
 
 # THANKS
 
-    <name>
+    Users like you!
 
 # TECHNOLOGY COLOPHON
 
