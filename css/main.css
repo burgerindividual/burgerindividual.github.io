@@ -80,14 +80,24 @@
 html {
   color: #fffffe;
   background: #000000;
-  font-size: 1.25em;
-  font-family: AppleII_40Col, monospace;
-  line-height: 1.0;
+}
+
+@media all and (max-width: 900px) {
+  html {
+    font-family: AppleII_80Col, monospace;
+  }
+}
+
+@media not all and (max-width: 900px) {
+  html {
+    font-family: AppleII_40Col, monospace;
+  }
 }
 
 /* correct for normalize's forced fixes */
 pre {
   font-family: inherit;
+  line-height: 1.0;
 }
 
 /*
@@ -114,8 +124,7 @@ pre {
 
 body {
   position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 30px 10% auto 10%;
   overflow: hidden;
 }
 
@@ -123,12 +132,81 @@ body > * {
   width: 100%;
 }
 
+tr {
+  height: 0;
+}
+
+td {
+  height: inherit;
+  border: 5px solid #fffffe;
+}
+
 .col70pc {
-  width: 70%;
+  box-sizing: border-box;
+  width: 65%;
+  padding: 0;
+  margin: 0;
 }
 
 .col30pc {
-  width: 30%;
+  box-sizing: border-box;
+  width: 35%;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.table-slot {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0;
+  align-items: stretch;
+  /*flex-wrap: nowrap;*/
+  /*align-content: space-around;*/
+}
+
+.table-slot > * {
+  padding: 10px;
+}
+
+.divider {
+  border-top: 5px solid #fffffe;
+  align-self: stretch;
+  padding: 0;
+  margin: 0;
+  height: 0;
+}
+
+.text_large {
+  font-size: 1.25em;
+}
+
+.text_medium {
+  font-size: 1.1em;
+}
+
+.text_small {
+  font-size: 1.0em;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 1.5em;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 1.1em;
+}
+
+p {
+  line-height: 1.1;
 }
 
 /*
