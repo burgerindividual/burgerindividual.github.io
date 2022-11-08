@@ -82,13 +82,13 @@ html {
   background: #000000;
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 1500px) {
   html {
     font-family: AppleII_80Col, monospace;
   }
 }
 
-@media not all and (max-width: 900px) {
+@media not all and (max-width: 1500px) {
   html {
     font-family: AppleII_40Col, monospace;
   }
