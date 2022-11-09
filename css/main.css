@@ -12,83 +12,50 @@
   src: url('/font/AppleII_80Col.ttf');
 }
 
-/* Apple II Color Palette */
-.a2black {
-  color: #000000;
+:root {
+  /* Apple II Color Palette */
+  --a2black: #000000;
+  --a2magenta: #99035f;
+  --a2purple: #ca13fe;
+  --a2darkgreen: #007310;
+  --a2lightgrey: #7f7f7f;
+  --a2cyan: #2497ff;
+  --a2brown: #4f5101;
+  --a2orange: #f05c00;
+  --a2grey: #bebebe;
+  --a2pink: #ff85e1;
+  --a2green: #12ca07;
+  --a2yellow: #ced413;
+  --a2aqua: #51f595;
+  --a2white: #fffffe;
+  --a2lightblue: #aaa2ff;
+  --a2darkblue: #4204e1;
 }
 
-.a2magenta {
-  color: #99035f;
+a:link {
+  color: var(--a2cyan);
 }
 
-.a2purple {
-  color: #ca13fe;
+a:visited {
+  color: var(--a2aqua);
 }
 
-.a2darkgreen {
-  color: #007310;
-}
-
-.a2lightgrey {
-  color: #7f7f7f;
-}
-
-.a2cyan, a:link {
-  color: #2497ff;
-}
-
-.a2brown {
-  color: #4f5101;
-}
-
-.a2orange {
-  color: #f05c00;
-}
-
-.a2grey {
-  color: #bebebe;
-}
-
-.a2pink {
-  color: #ff85e1;
-}
-
-.a2green {
-  color: #12ca07;
-}
-
-.a2yellow {
-  color: #ced413;
-}
-
-.a2aqua, a:visited {
-  color: #51f595;
-}
-
-.a2white {
-  color: #fffffe;
-}
-
-.a2lightblue {
-  color: #aaa2ff;
-}
-
-.a2darkblue, a:hover {
-  color: #4204e1;
+a:hover {
+  color: var(--a2darkblue);
 }
 
 html {
-  color: #fffffe;
-  background: #000000;
+  color: var(--a2white);
+  background: var(--a2black);
 }
 
-@media all and (max-width: 1500px) {
+@media all and (max-width: 1370px) {
   html {
     font-family: AppleII_80Col, monospace;
   }
 }
 
-@media not all and (max-width: 1500px) {
+@media not all and (max-width: 1370px) {
   html {
     font-family: AppleII_40Col, monospace;
   }
@@ -111,27 +78,26 @@ pre {
  */
 
 ::-moz-selection {
-  color: #000000;
+  color: var(--a2black);
   background: currentColor;
   text-shadow: none;
 }
 
 ::selection {
-  color: #000000;
+  color: var(--a2black);
   background: currentColor;
   text-shadow: none;
 }
 
 body {
   position: relative;
-  margin: 30px 10% auto 10%;
-  max-width: 80%;
-  overflow: hidden;
+  margin: 30px 6% 30px 6%;
+  overflow: auto;
 }
 
-body > * {
-  width: 100%;
-}
+/*body > * {*/
+/*  width: 100%;*/
+/*}*/
 
 tr {
   height: 0;
@@ -142,43 +108,61 @@ td {
 }
 
 .col65pc {
-  box-sizing: border-box;
-  border: 5px solid #fffffe;
   width: 65%;
-  padding: 0;
-  margin: 0;
 }
 
 .col35pc {
-  box-sizing: border-box;
-  border: 5px solid #fffffe;
   width: 35%;
-  padding: 0;
-  margin: 0;
+}
+
+.col70pc {
+  width: 70%;
+}
+
+.col30pc {
+  width: 30%;
+}
+
+.content-pane {
+  box-sizing: border-box;
+}
+
+.content-pane > * {
+  margin-inline: 16px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 table {
   border-collapse: collapse;
 }
 
-.table-slot {
+.table-side {
   width: 100%;
   height: 100%;
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   align-items: stretch;
   flex-wrap: nowrap;
   align-content: space-around;
 }
 
-.table-slot > * {
-  padding: 15px;
+hr {
+  display: block;
+  border: none;
+  height: 0;
+  border-top: 5px solid var(--a2white);
+  align-self: stretch;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .divider {
-  border-top: 5px solid #fffffe;
+  border-top: 5px solid var(--a2white);
   align-self: stretch;
   padding: 0;
   margin: 0;
@@ -233,7 +217,9 @@ table {
 h2 {
   font-weight: normal;
   font-size: 1.5em;
-  margin: 7px auto 0.83em auto;
+  /* can't be part of the margin because it causes issues in some spots */
+  padding-top: 7px;
+  margin: 0 auto 0.83em auto;
 }
 
 h3 {
@@ -251,28 +237,29 @@ p {
   line-height: 1.2;
 }
 
-#logo-pic {
+.logo-pic {
   height:0;
   min-height:100%;
   float: left;
   margin-right: 5px;
 }
 
-#logo-text {
+.logo-text {
   margin: 15px 0;
 }
 
-/*
- * A better looking default horizontal rule
- */
+.a2border {
+  border: 5px solid var(--a2white);
+}
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
+.content-wrapper {
+  box-sizing: border-box;
   padding: 0;
+  margin: 0;
+}
+
+#projects {
+  border-top: none;
 }
 
 /*
