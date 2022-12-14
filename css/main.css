@@ -103,12 +103,12 @@ td {
   height: inherit;
 }
 
-.col65pc {
-  width: 65%;
+.col62pc {
+  width: 62%;
 }
 
-.col35pc {
-  width: 35%;
+.col38pc {
+  width: 38%;
 }
 
 .col70pc {
@@ -134,12 +134,12 @@ td {
 }
 
 .content-element {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 22px;
+  margin-right: 22px;
 }
 
 .spacer {
-  margin: 16px 0 0 0;
+  margin: 22px 0 0 0;
   height: 0;
 }
 
@@ -166,7 +166,7 @@ hr {
 .featured-list {
   width: 76%;
   padding: 0 12%;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -182,7 +182,7 @@ hr {
 
 .tools-list {
   width: 93%;
-  margin: 0 0 16px 7%;
+  margin: 0 0 22px 7%;
   column-count: 3;
   column-fill: balance;
 }
@@ -211,8 +211,8 @@ hr {
 h2 {
   font-weight: normal;
   font-size: 1.5em;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 22px;
+  margin-bottom: 22px;
 }
 
 h3 {
@@ -225,6 +225,7 @@ h3 {
 h4 {
   font-weight: normal;
   font-size: 1.1em;
+  line-height: 1.5;
 }
 
 p {
@@ -243,16 +244,16 @@ p {
 }
 
 .external-margins {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 22px;
+  margin-bottom: 22px;
 }
 
 .internal-margins > *:first-child {
-  margin-top: 16px;
+  margin-top: 22px;
 }
 
 .internal-margins > *:last-child {
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 }
 
 .a2border {
