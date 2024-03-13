@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: AppleII_40Col;
-  src: url('/font/AppleII_40Col.ttf');
+  src: url('../font/AppleII_40Col.ttf');
 }
 
 @font-face {
   font-family: AppleII_80Col;
-  src: url('/font/AppleII_80Col.ttf');
+  src: url('../font/AppleII_80Col.ttf');
 }
 
 :root {
@@ -90,9 +90,14 @@ pre {
 }
 
 body {
-  position: relative;
   margin: 30px 6% 30px 6%;
+  display: block;
   overflow: auto;
+  position: relative;
+}
+
+table {
+  width: 100%;
 }
 
 tr {
@@ -127,7 +132,7 @@ td {
 .content-pane {
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: inline-flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
@@ -233,8 +238,8 @@ p {
 }
 
 .logo-pic {
-  height: 0;
-  min-height: 100%;
+  height: 171px;
+  /* min-height: 100%; */
   float: left;
   margin-right: 13px;
 }
