@@ -26,10 +26,10 @@
   <table>
     <tbody>
       <tr>
-        <td class="col62pc a2border content-wrapper">
+        <td class="col-left a2border content-wrapper">
           <div class="content-pane">
             <div class="content-element external-margins">
-              <img class="logo-pic" src="img/pic2.png" alt="Picture of Me (Feb 20, 2024)">
+              <img class="logo-pic a2border-light" src="img/pic2.png" alt="Picture of Me (Feb 20, 2024)">
 <pre class="logo-text text-large">
 ┏┓╻╻┏┓┏┓&nbsp;┏┓┏┓┣┓┃╹┏┓┏┓
 ╹&nbsp;┗┫┗┻╹╹&nbsp;┗┫┗╸╹╹╹╹╹╹┗┫
@@ -42,7 +42,7 @@ Student/Developer
             </div>
             <hr class="divider">
             <div class="content-element internal-margins">
-              <h2>> Featured Projects</h2>
+              <h2>] Featured Projects</h2>
               <div class="featured-list">
                 <h3><a href="#sodium">Sodium</a></h3>
                 <h3><a href="#geogebra">GeoGebra</a></h3>
@@ -51,7 +51,7 @@ Student/Developer
             </div>
             <hr class="divider">
             <div class="content-element internal-margins">
-              <h2>> Tools & Technologies</h2>
+              <h2>] Tools & Technologies</h2>
               <h3 class="list-header">- Used in Projects</h3>
               <div class="tools-list">
                 <h4>
@@ -61,20 +61,22 @@ Student/Developer
                   &nbsp;&nbsp;<span style="color:#f93535">■</span>&nbsp;GWT<br>
                   <br>
                   <span style="color:#dea584">■</span>&nbsp;Rust<br>
-                  <br>
-                  <span style="color:#6E4C13">■</span>&nbsp;ASM&nbsp;(x86,ARM)<br>
+                  &nbsp;&nbsp;<span style="color:#0078d4">■</span>&nbsp;WinAPI<br>
+                  &nbsp;&nbsp;<span style="color:#2F3360">■</span>&nbsp;embedded-hal
                 </h4>
                 <h4>
+                  <span style="color:#6E4C13">■</span>&nbsp;ASM&nbsp;(x86,ARM)<br>
+                  <br>
                   <span style="color:#f34b7d">■</span>&nbsp;C++<br>
                   &nbsp;&nbsp;<span style="color:#4fccf3">■</span>&nbsp;Arduino<br>
                   <br>
                   <span style="color:#178600">■</span>&nbsp;C#<br>
                   <br>
-                  <span style="color:#f1e05a">■</span>&nbsp;JavaScript<br>
-                  <br>
-                  <span style="color:#e34c26">■</span>&nbsp;HTML<br>
+                  <span style="color:#f1e05a">■</span>&nbsp;JavaScript
                 </h4>
                 <h4>
+                  <span style="color:#e34c26">■</span>&nbsp;HTML<br>
+                  <br>
                   <span style="color:#563d7c">■</span>&nbsp;CSS<br>
                   <br>
                   <span style="color:#5586A4">■</span>&nbsp;OpenGL<br>
@@ -87,33 +89,36 @@ Student/Developer
               <h3 class="list-header">- Currently Learning</h3>
               <div class="tools-list">
                 <h4>
-                  <span style="color:#555555">■</span>&nbsp;C<br>
+                  <span style="color:#555555">■</span>&nbsp;C
                 </h4>
                 <h4>
-                  <span style="color:#3572A5">■</span>&nbsp;Python<br>
+                  <span style="color:#3572A5">■</span>&nbsp;Python
                 </h4>
                 <h4>
-                  <span style="color:#04133b">■</span>&nbsp;WebAssembly<br>
+                  <span style="color:#04133b">■</span>&nbsp;WebAssembly
                 </h4>
               </div>
             </div>
           </div>
         </td>
-        <td class="col38pc a2border content-wrapper">
-          <div class="content-pane">
+        <td class="col-right a2border-right content-wrapper force-height">
+          <div class="content-pane force-height">
             <div class="content-element internal-margins">
-              <h2>> About Me</h2>
+              <h2>] About Me</h2>
               <p>
-                N/A<br><br>
-                N/A
+                I've been interested in computers since I was young. In 2016, at age 11, I started
+                programming with a Java game tutorial in Swing. In 2017, I was given my first microcontroller,
+                an Arduino UNO, which I tinkered with to learn about hardware and electronics.<br><br>
+                Since then, I have continued growing my skillsets, developing a passion for low-level,
+                graphics, and embedded programming.
               </p>
             </div>
             <hr class="divider">
             <div class="content-element internal-margins">
-              <h2>> Contact Info</h2>
+              <h2>] Contact Info</h2>
               <p>
                 - School Email (Main)<br>
-                &nbsp;&nbsp;<a href="mailto:gehling.9@buckeyemail.osu.edu">gehling.9@buckeyemail.osu.edu</a><br>
+                &nbsp;&nbsp;<a href="mailto:gehling.9@osu.edu">gehling.9@osu.edu</a><br>
                 <br>
                 - Personal Email<br>
                 &nbsp;&nbsp;<a href="mailto:ryan.gehling@yahoo.com">ryan.gehling@yahoo.com</a><br>
@@ -127,14 +132,35 @@ Student/Developer
   <div id="projects" class="a2border content-wrapper">
     <div class="col70pc content-pane">
       <div class="content-element internal-margins">
-        <h2>> Projects</h2>
+        <h2>] Projects</h2>
       </div>
-      <div id="sodium">
-<!--        <p>-->
+      <div id="sodium" class="content-element internal-margins">
+        <h3 class="text-large"><a href="https://github.com/burgerindividual/sodium-fabric/tree/experiments/rust-culling-dev-squashed" target="_blank">Sodium</a></h3>
+        <h4>A Minecraft mod designed to improve frame rates and reduce micro-stutter</h4>
+        <p>
+          Role: Contributor<br>
+          <br>
+          Status: <span style="color:var(--a2green)">■</span> Active<br>
+          <br>
+          Technologies:<br>
+          &nbsp;<span style="color:#b07219">■</span>&nbsp;Java<br>
+          &nbsp;&nbsp;&nbsp;<span style="color:#0A90CB">■</span>&nbsp;LWJGL<br>
+          &nbsp;<span style="color:#dea584">■</span>&nbsp;Rust<br>
+          &nbsp;<span style="color:#5586A4">■</span>&nbsp;OpenGL
+        </p>
       </div>
       <hr class="content-element">
-      <div id="geogebra">
-        <!--        <p>-->
+      <div id="fath" class="content-element internal-margins">
+        <h3 class="text-large"><a href="https://github.com/burgerindividual/fath" target="_blank">Fath</a></h3>
+        <h4>Fa(st ma)th library written in Rust, built for speed</h4>
+        <p>
+          Role: Main Developer<br>
+          <br>
+          Status: <span style="color:var(--a2cyan)">■</span> Maintained<br>
+          <br>
+          Technologies:<br>
+          &nbsp;<span style="color:#dea584">■</span>&nbsp;Rust<br>
+        </p>
       </div>
     </div>
   </div>

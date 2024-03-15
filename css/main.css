@@ -12,13 +12,18 @@
   src: url('../font/AppleII_80Col.ttf');
 }
 
+/* @font-face {
+  font-family: "Cascadia Mono PL";
+  src: url("../font/CascadiaMonoPL.ttf");
+} */
+
 :root {
   /* Apple II Color Palette */
   --a2black: #000000;
   --a2magenta: #99035f;
   --a2purple: #ca13fe;
   --a2darkgreen: #007310;
-  --a2lightgrey: #7f7f7f;
+  --a2darkgrey: #7f7f7f;
   --a2cyan: #2497ff;
   --a2brown: #4f5101;
   --a2orange: #f05c00;
@@ -47,15 +52,16 @@ a:hover {
 html {
   color: var(--a2white);
   background: var(--a2black);
+  /* font-family: "Cascadia Code PL", monospace; */
 }
 
-@media all and (max-width: 1370px) {
+@media all and (max-width: 1200px) {
   html {
     font-family: AppleII_80Col, monospace;
   }
 }
 
-@media not all and (max-width: 1370px) {
+@media not all and (max-width: 1200px) {
   html {
     font-family: AppleII_40Col, monospace;
   }
@@ -85,7 +91,7 @@ pre {
 
 ::selection {
   color: var(--a2black);
-  background: currentColor;
+  background: var(--a2white);
   text-shadow: none;
 }
 
@@ -98,6 +104,8 @@ body {
 
 table {
   width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 tr {
@@ -108,12 +116,12 @@ td {
   height: inherit;
 }
 
-.col62pc {
-  width: 62%;
+.col-left {
+  width: 65%;
 }
 
-.col38pc {
-  width: 38%;
+.col-right {
+  width: 35%;
 }
 
 .col70pc {
@@ -143,13 +151,13 @@ td {
   margin-right: 22px;
 }
 
+.force-height {
+  height: 100%;
+}
+
 .spacer {
   margin: 22px 0 0 0;
   height: 0;
-}
-
-table {
-  border-collapse: collapse;
 }
 
 hr {
@@ -186,14 +194,17 @@ hr {
 }
 
 .tools-list {
-  width: 93%;
-  margin: 0 0 22px 7%;
-  column-count: 3;
-  column-fill: balance;
+  /* width: 93%; */
+  margin: 0 0 22px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
 }
 
 .tools-list > * {
   margin: 0;
+  display: inline-block;
 }
 
 .text-large {
@@ -235,10 +246,11 @@ h4 {
 
 p {
   line-height: 1.2;
+  font-size: 0.9em;
 }
 
 .logo-pic {
-  height: 171px;
+  height: 165px;
   /* min-height: 100%; */
   float: left;
   margin-right: 13px;
@@ -263,6 +275,31 @@ p {
 
 .a2border {
   border: 5px solid var(--a2white);
+  /* border-spacing: 0; */
+}
+
+.a2border-light {
+  border: 3px solid var(--a2white);
+  /* border-spacing: 0; */
+}
+
+.a2border-right {
+  border: 5px solid var(--a2white);
+  border-left: none;
+  /* border-spacing: 0; */
+}
+
+.a2border-top-left {
+  border-top-left-radius: 20px;
+}
+.a2border-top-right {
+  border-top-right-radius: 20px;
+}
+.a2border-bottom-left {
+  border-bottom-left-radius: 20px;
+}
+.a2border-bottom-right {
+  border-bottom-right-radius: 20px;
 }
 
 #projects {
