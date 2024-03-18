@@ -177,13 +177,10 @@ hr {
 }
 
 .featured-list {
-  width: 76%;
-  padding: 0 12%;
-  margin-bottom: 22px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-content: space-around;
   align-items: center;
 }
