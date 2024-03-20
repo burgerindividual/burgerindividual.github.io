@@ -1,5 +1,3 @@
-import 'regenerator-runtime/runtime';
-
 //// text "loading" effect
 const FILL_DELAY = 5;
 
