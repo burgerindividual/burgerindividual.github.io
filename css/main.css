@@ -12,10 +12,10 @@
   src: url('../font/AppleII_80Col.ttf');
 } */
 
-/* @font-face {
-  font-family: "Cascadia Mono PL";
-  src: url("../font/CascadiaMonoPL.ttf");
-} */
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("../font/CascadiaCode.ttf");
+}
 
 :root {
   /* Apple II Color Palette */
@@ -35,6 +35,8 @@
   --a2white: #fffffe;
   --a2lightblue: #aaa2ff;
   --a2darkblue: #4204e1;
+
+  --font-scaler: 0.25vw;
 }
 
 a:link {
@@ -52,9 +54,8 @@ a:hover {
 html {
   color: var(--a2white);
   background: var(--a2black);
-  font-family: AppleII_40Col, monospace;
-  font-size: 15px;
-  letter-spacing: -0.07em;
+  font-family: Cascadia Code, monospace;
+  font-size: calc(14px + var(--font-scaler));
 }
 
 /* @media all and (max-width: 1200px) {
@@ -69,11 +70,8 @@ html {
   }
 } */
 
-/* correct for normalize's forced fixes */
 pre {
   font-family: inherit;
-  /* fix gap in logo */
-  line-height: 1.0;
   white-space: pre;
 }
 
@@ -191,10 +189,10 @@ hr {
 }
 
 .tools-list {
-  margin: 0 0 22px 22px;
+  margin: 0 22px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(17ch, 1fr));
   gap: 15px;
 }
 
@@ -221,36 +219,69 @@ hr {
 
 h2 {
   font-weight: normal;
-  font-size: 22px;
-  margin-top: 22px;
-  margin-bottom: 22px;
+  font-size: calc(21px + var(--font-scaler));
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 h3 {
   font-weight: normal;
-  font-size: 18px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-size: calc(17px + var(--font-scaler));
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 h4 {
   font-weight: normal;
-  font-size: 16px;
+  font-size: calc(15px + var(--font-scaler));
   line-height: 1.5;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 p {
   line-height: 1.3;
-  font-size: 14px;
+  font-size: calc(13px + var(--font-scaler));
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 .logo-pic {
   height: 165px;
-  margin-right: 13px;
 }
 
-.logo-text {
-  margin: 15px 0;
+.logo-text-pane {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+  gap: 1.0em;
+}
+
+.logo-pane {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 13px;
+}
+
+.name-pane {
+  /* Setup to make sure gap is the correct size */
+  font-family: AppleII_40Col, monospace;
+
+  /* fix gap in logo */
+  letter-spacing: -1px;
+  line-height: calc(1em - 1px);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 0.7ch
 }
 
 .no-margin {
