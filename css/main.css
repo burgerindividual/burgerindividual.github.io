@@ -41,14 +41,17 @@
 
 a:link {
   color: var(--a2cyan);
+  border-color: var(--a2cyan);
 }
 
 a:visited {
   color: var(--a2aqua);
+  border-color: var(--a2aqua);
 }
 
 a:hover {
   color: var(--a2darkblue);
+  border-color: var(--a2darkblue);
 }
 
 html {
@@ -133,12 +136,12 @@ body {
 }
 
 .main-col-left {
-  flex: 1 1 calc(65% - 5px);
+  flex: 65 65;
   background: var(--a2black);
 }
 
 .main-col-right {
-  flex: 1 1 35%;
+  flex: 35 35;
   background: var(--a2black);
 }
 
@@ -289,6 +292,21 @@ p {
   margin-bottom: 0;
 }
 
+.link-icons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon-pic {
+  width: 50px;
+  image-rendering: crisp-edges;
+  border: 3px solid;
+}
+
 .external-margins {
   margin-top: 22px;
   margin-bottom: 22px;
@@ -349,7 +367,7 @@ p {
 .project-images {
   min-width: 0;
   width: 100%;
-  height: auto;
+  /* max-height: 420px; */
   flex: 3 1 350px;
   object-fit: contain;
 }
