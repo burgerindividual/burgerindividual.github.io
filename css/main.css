@@ -246,11 +246,12 @@ p {
   margin-bottom: 0.8em;
 }
 
-.logo-pic {
-  height: 165px;
+#logo-pic {
+  box-sizing: border-box;
+  height: 170px;
 }
 
-.logo-text-pane {
+#logo-text-pane {
   box-sizing: border-box;
   display: inline-flex;
   flex-flow: column nowrap;
@@ -259,17 +260,16 @@ p {
   gap: 1.0em;
 }
 
-.logo-pane {
+#logo-pane {
   box-sizing: border-box;
   display: inline-flex;
   flex-flow: row wrap;
   justify-content: start;
   align-items: center;
-  gap: 13px;
+  gap: 15px;
 }
 
-.name-pane {
-  /* Setup to make sure gap is the correct size */
+#logo-name-pane {
   font-family: AppleII_40Col, monospace;
 
   /* fix gap in logo */

@@ -1,36 +1,22 @@
-//// text "loading" effect
-const FILL_DELAY = 5;
+function updateLogoWrapping() {
+    const logoTextPane = document.getElementById("logo-text-pane");
+    const logoNamePane = document.getElementById("logo-name-pane");
+    const logoPane = document.getElementById("logo-pane");
 
-const walker = document.createTreeWalker(
-  document.documentElement,
-  NodeFilter.SHOW_TEXT,
-  (node) => node.nodeName.toLowerCase() === "#text" && node.textContent !== "" ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
-);
+    const logoPicBottomY = document.getElementById("logo-pic").getBoundingClientRect().bottom;
+    const logoTextTopY = logoTextPane.getBoundingClientRect().top;
 
-const textElements = [];
-const textContents = [];
-let curIdx = 0;
-
-let textElement;
-while (textElement = walker.nextNode()) {
-  textElements[curIdx] = textElement;
-  textContents[curIdx] = textElement.textContent;
-  textElement.textContent = "";
-  curIdx++;
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-  fillText(textElements, textContents, curIdx);
-});
-
-async function fillText(textElements, textContents, count) {
-  for (let i = 0; i < count; i++) {
-    let textElement = textElements[i];
-    let textContent = textContents[i];
-    for (let i = 0; i < textContent.length; i++) {
-      textElement.textContent += textContent[i] + '█';
-      await new Promise(r => setTimeout(r, FILL_DELAY));
-      textElement.textContent = textElement.textContent.slice(0,-1);
+    // if this passes, we know it wrapped, otherwise it didn't.
+    if (logoPicBottomY <= logoTextTopY) {
+        logoTextPane.style.alignItems = "center";
+        logoPane.style.justifyContent = "center";
+        logoNamePane.style.justifyContent = "center";
+    } else {
+        logoTextPane.style.alignItems = "start";
+        logoPane.style.justifyContent = "start";
+        logoNamePane.style.justifyContent = "start";
     }
-  }
 }
+
+window.addEventListener("load", updateLogoWrapping);
+window.addEventListener("resize", updateLogoWrapping);
