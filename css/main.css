@@ -303,7 +303,7 @@ p {
 
 .icon-pic {
   width: 50px;
-  image-rendering: crisp-edges;
+  image-rendering: pixelated;
   border: 3px solid;
 }
 
